@@ -2,7 +2,7 @@ Summary:	Translates char-sets and decodes MIME
 Summary(pl):	Translator tablic znaków oraz dekoder MIME
 Name:		2UTF
 Version:	1.22
-Release:	4
+Release:	5
 License:	BSD
 Group:		Applications/Text
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
@@ -12,6 +12,7 @@ URL:		http://x-lt.richard.eu.org/me/rch/ll.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc
+%define		aliasdir	/var/lib/misc
 
 %description
 Filter for char-set translation to and from Unicode. Gets char-set
@@ -39,7 +40,7 @@ LDFLAGS="%{rpmcflags} -L/usr/lib/gconv"; export LDFLAGS
 	sysconfdir=%{_sysconfdir} \
 	docsdir=%{_docdir}/%{name}-%{version} \
 	var_prefix=/var \
-	ALIASES=/var/lib/2UTF.aliases \
+	ALIASES=%{aliasdir}/2UTF.aliases \
 	charmaps_localdatadir=%{_datadir}/i18n/charmaps \
 	man1dir=%{_mandir}/man1 \
 	OPT="%{rpmcflags}"
@@ -51,7 +52,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/i18n/charmaps
 	PREFIX=$RPM_BUILD_ROOT%{_prefix} \
 	sysconfdir=$RPM_BUILD_ROOT%{_sysconfdir} \
 	var_prefix=$RPM_BUILD_ROOT/var \
-	ALIASES=$RPM_BUILD_ROOT/var/lib/2UTF.aliases \
+	ALIASES=$RPM_BUILD_ROOT%{aliasdir}/2UTF.aliases \
 	docsdir=$RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} \
 	charmaps_localdatadir=$RPM_BUILD_ROOT%{_datadir}/i18n/charmaps \
 	TERMINFO=$RPM_BUILD_ROOT%{_datadir}/terminfo \
@@ -70,6 +71,9 @@ ln -sf 2UTF $RPM_BUILD_ROOT%{_bindir}/toUTF
 gzip -9nf examples/* BSD_style_license TODO changelog copyright || :
 
 %post
+if [ -f /var/lib/2UTF.aliases ]; then
+	mv -f /var/lib/2UTF.aliases %{aliasdir}/2UTF.aliases
+fi
 %{_bindir}/2UTF --create-aliases
 
 %clean
@@ -82,4 +86,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/terminfo/l/*
-%attr(644,root,root) %ghost /var/lib/2UTF.aliases
+%attr(644,root,root) %ghost %{aliasdir}/2UTF.aliases
