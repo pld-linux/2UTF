@@ -45,27 +45,27 @@ chmod -R u+w .
 	ALIASES=/var/lib/2UTF.aliases \
 	charmaps_localdatadir=%{_datadir}/i18n/charmaps \
 	man1dir=%{_mandir}/man1 \
-	OPT="$RPM_OPT_FLAGS"
+	OPT="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} GZIPDOCS=no \
-	PREFIX=$RPM_BUILD_ROOT/%{_prefix} \
+	PREFIX=$RPM_BUILD_ROOT%{_prefix} \
 	sysconfdir=$RPM_BUILD_ROOT%{_sysconfdir} \
 	var_prefix=$RPM_BUILD_ROOT/var \
 	ALIASES=$RPM_BUILD_ROOT/var/lib/2UTF.aliases \
-	docsdir=$RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version} \
-	charmaps_localdatadir=$RPM_BUILD_ROOT/%{_datadir}/i18n/charmaps \
-	TERMINFO=$RPM_BUILD_ROOT/%{_datadir}/terminfo \
-	man1dir=$RPM_BUILD_ROOT/%{_mandir}/man1 \
+	docsdir=$RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} \
+	charmaps_localdatadir=$RPM_BUILD_ROOT%{_datadir}/i18n/charmaps \
+	TERMINFO=$RPM_BUILD_ROOT%{_datadir}/terminfo \
+	man1dir=$RPM_BUILD_ROOT%{_mandir}/man1 \
 	tmpdir_install=yes \
 	owner=`id -ur` \
 	group=`id -gr` \
 	install
 
-rm -f $RPM_BUILD_ROOT/%{_mandir}/man1/{fromUTF.1,toUTF.1}
-echo ".so 2UTF.1" > $RPM_BUILD_ROOT/%{_mandir}/man1/toUTF.1
-echo ".so 2UTF.1" > $RPM_BUILD_ROOT/%{_mandir}/man1/fromUTF.1
+rm -f $RPM_BUILD_ROOT%{_mandir}/man1/{fromUTF.1,toUTF.1}
+echo ".so 2UTF.1" > $RPM_BUILD_ROOT%{_mandir}/man1/toUTF.1
+echo ".so 2UTF.1" > $RPM_BUILD_ROOT%{_mandir}/man1/fromUTF.1
 
 ln -sf 2UTF $RPM_BUILD_ROOT%{_bindir}/toUTF
 
