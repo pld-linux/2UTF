@@ -1,7 +1,7 @@
 Summary:	Translates char-sets and decodes MIME.
 Summary(pl):	Translator tablic znaków oraz dekoder MIME.
 Name:		2UTF
-Version:	1.10
+Version:	1.11
 Release:	1
 Copyright:	BSD
 Group:		Utilities/Text
