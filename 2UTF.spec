@@ -2,11 +2,12 @@ Summary:	Translates char-sets and decodes MIME.
 Summary(pl):	Translator tablic znaków oraz dekoder MIME.
 Name:		2UTF
 Version:	1.11
-Release:	3
+Release:	4
 License:	BSD
-Group:		Utilities/Text
+Group:		Applications/Text
+Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
-Group(pl):	Narzêdzia/Tekst
+Group(pl):	Aplikacje/Tekst
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
 Patch0:		%{name}-install.patch
 URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
@@ -27,7 +28,10 @@ wiadomo¶ci wieloczê¶ciowe MIME i uruchamiaæ zewnêtrzne filtry. Mo¿e
 wy¶wietlaæ tablice znaków i aktualny font konsolowy.
 
 %prep
-%setup -q
+%setup -q -c -T
+(cd ..
+tar xzf %{SOURCE0} || :
+)
 chmod -R u+w .
 %patch -p0
 
@@ -65,8 +69,7 @@ echo ".so 2UTF.1" > $RPM_BUILD_ROOT/%{_mandir}/man1/fromUTF.1
 
 ln -sf 2UTF $RPM_BUILD_ROOT%{_bindir}/toUTF
 
-gzip -9nf $RPM_BUILD_ROOT/%{_mandir}/man1/* examples/* \
-	BSD_style_license TODO changelog copyright || :
+gzip -9nf examples/* BSD_style_license TODO changelog copyright || :
 
 %post
 %{_bindir}/2UTF --create-aliases
