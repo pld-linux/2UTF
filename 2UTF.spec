@@ -10,7 +10,8 @@ Group(fr):	Utilitaires/Texte
 Group(pl):	Aplikacje/Tekst
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
 Patch0:		%{name}-makefile.patch
-URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
+URL:		http://x-lt.richard.eu.org/me/rch/ll.html
+#URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc
