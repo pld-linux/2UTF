@@ -68,8 +68,6 @@ echo ".so 2UTF.1" > $RPM_BUILD_ROOT%{_mandir}/man1/fromUTF.1
 
 ln -sf 2UTF $RPM_BUILD_ROOT%{_bindir}/toUTF
 
-gzip -9nf examples/* BSD_style_license TODO changelog copyright || :
-
 %post
 if [ -f /var/lib/2UTF.aliases ]; then
 	mv -f /var/lib/2UTF.aliases %{aliasdir}/2UTF.aliases
@@ -81,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz examples/*.gz
+%doc examples/* BSD_style_license TODO changelog copyright
 %config %{_sysconfdir}/2UTF.config
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
