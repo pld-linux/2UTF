@@ -32,8 +32,8 @@ chmod -R u+w .
 %patch -p0
 
 %build
-make config
-make GZIPDOCS=no \
+%{__make} config
+%{__make} GZIPDOCS=no \
 	PREFIX=%{_prefix} \
 	sysconfdir=%{_sysconfdir} \
 	docsdir=%{_docdir}/%{name}-%{version} \
@@ -45,7 +45,7 @@ make GZIPDOCS=no \
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make GZIPDOCS=no \
+%{__make} GZIPDOCS=no \
 	PREFIX=$RPM_BUILD_ROOT/%{_prefix} \
 	sysconfdir=$RPM_BUILD_ROOT%{_sysconfdir} \
 	var_prefix=$RPM_BUILD_ROOT/var \
