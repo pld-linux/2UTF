@@ -41,4 +41,4 @@ find $RPM_BUILD_ROOT -type f -or -type l \
 set -o errexit
 test -e /usr/local/share/i18n/charmaps \
     || install -c -d -o root -g staff -m 2775	/usr/local/share/i18n/charmaps
-/usr/bin/2UTF --create-aliases
+%{_bindir}/2UTF --create-aliases
