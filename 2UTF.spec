@@ -7,8 +7,8 @@ License:	BSD
 Group:		Utilities/Text
 Group(fr):	Utilitaires/Texte
 Group(pl):	Narzêdzia/Tekst
-Source:		ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
-Patch:		2UTF-install.patch
+Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
+Patch0:		2UTF-install.patch
 URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -17,14 +17,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Filter for char-set translation to and from Unicode. Gets char-set
 definitions from WG15 locales char-maps or similiar tables. Can decode
-nested multi-part MIME messages and invoke external filters. Can display
-char-maps and current console font.
+nested multi-part MIME messages and invoke external filters. Can
+display char-maps and current console font.
 
 %description -l pl
-Translator tablic znaków do i z Unikodu. Pobiera definicje tablic znaków z
-lokalnych WG15 tablic znaków lub podobnych. Mo¿e zdekodowaæ wiadomo¶ci
-wieloczê¶ciowe MIME i uruchamiaæ zewnêtrzne filtry. Mo¿e wy¶wietlaæ tablice
-znaków i aktualny font konsolowy.
+Translator tablic znaków do i z Unikodu. Pobiera definicje tablic
+znaków z lokalnych WG15 tablic znaków lub podobnych. Mo¿e zdekodowaæ
+wiadomo¶ci wieloczê¶ciowe MIME i uruchamiaæ zewnêtrzne filtry. Mo¿e
+wy¶wietlaæ tablice znaków i aktualny font konsolowy.
 
 %prep
 %setup -q
