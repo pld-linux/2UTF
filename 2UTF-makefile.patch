@@ -1,0 +1,36 @@
+--- ./Makefile.orig	Sun Jul 29 16:17:38 2001
++++ ./Makefile	Sun Jul 29 16:38:53 2001
+@@ -72,7 +72,7 @@
+ docsdir  = $(prefix)/share/doc/$(Package)
+ examplesdir = $(docsdir)/examples
+ # charmaps_localdatadir must end in /
+-charmaps_localdatadir  = /usr/local/share/i18n/charmaps/
++charmaps_localdatadir  = /usr/share/i18n/charmaps/
+ man1dir  = $(prefix)/man/man1
+ # for terminal initialization script
+ sbindir  = $(exec_prefix)/sbin
+@@ -90,7 +90,8 @@
+ WARN = -W -Wconversions -Wbad-function-cast
+ 
+ CFLAGS  = $(OPT) $(WARN) $(DEFS) -I$(ICONV_DIR)/include
+-LDFLAGS = -L$(ICONV_DIR)/lib -liconv
++#LDFLAGS = -L$(ICONV_DIR)/lib/gconv -L$(ICONV_DIR)/lib -liconv
++LDFLAGS = -L$(ICONV_DIR)/lib/gconv -L$(ICONV_DIR)/lib
+ 
+ all:	$(BIN) linux+utf8.ti
+ 
+@@ -266,13 +267,7 @@
+ 		if [ $${prefix##debian*}y != y ] ; \
+ 		then \
+ 		 if ! tic -V 2>&1 |grep -q tconv; then \
+-		    TERMINFO=; tic linux+utf8.ti; \
+-		    test -e $(prefix)/share/terminfo/l/ || $(MKDIR) \
+-			    $(prefix)/share/terminfo/l/; \
+-		    cp /usr/share/terminfo/l/linux+utf8 \
+-			    /usr/share/terminfo/l/linux-gr+utf8 \
+-			    /usr/share/terminfo/l/linux+k \
+-				    $(prefix)/share/terminfo/l/; \
++		 	tic linux+utf8.ti; \
+ 		 fi; \
+ 		fi; \
+ 	else \
