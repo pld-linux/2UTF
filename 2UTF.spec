@@ -4,7 +4,7 @@ Version: 1.10
 Release: 0
 Copyright: BSD style
 URL: http://www.angelfire.com/me/rch/ll.html#2UTF
-BuildRoot: /tmp/2UTF-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 Group: Utilities/Text
 Source: sunsite.unc.edu:/pub/Linux/utils/text/2UTF-1.10.tar.gz
 %description
