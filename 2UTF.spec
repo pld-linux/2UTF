@@ -70,9 +70,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/terminfo/l/*
-
-%changelog
-* Wed Jul 07 1999 Jan Rêkorajski <baggins@pld.org.pl>
-  [1.10-1]
-- FHS 2.0
-- spec cleanup
