@@ -5,9 +5,6 @@ Version:	1.22
 Release:	2
 License:	BSD
 Group:		Applications/Text
-Group(de):	Applikationen/Text
-Group(fr):	Utilitaires/Texte
-Group(pl):	Aplikacje/Tekst
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
 Patch0:		%{name}-makefile.patch
 URL:		http://x-lt.richard.eu.org/me/rch/ll.html
