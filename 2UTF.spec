@@ -1,5 +1,5 @@
-Summary:	Translates char-sets and decodes MIME.
-Summary(pl):	Translator tablic znaków oraz dekoder MIME.
+Summary:	Translates char-sets and decodes MIME
+Summary(pl):	Translator tablic znaków oraz dekoder MIME
 Name:		2UTF
 Version:	1.22
 Release:	1
@@ -28,17 +28,13 @@ wiadomo¶ci wieloczê¶ciowe MIME i uruchamiaæ zewnêtrzne filtry. Mo¿e
 wy¶wietlaæ tablice znaków i aktualny font konsolowy.
 
 %prep
-%setup -q -c -T
-(cd ..
-tar xzf %{SOURCE0} || :
-)
-chmod -R u+w .
+%setup -q
 %patch -p0
 
 %build
-export CCFLAGS="%{rpmcflags} -L/usr/lib/gconv"
+CCFLAGS="%{rpmcflags} -L/usr/lib/gconv"; export CCFLAGS
 %{__make} config ICONV_DIR=%{_prefix}
-export LDFLAGS="%{rpmcflags} -L/usr/lib/gconv"
+LDFLAGS="%{rpmcflags} -L/usr/lib/gconv"; export LDFLAGS
 %{__make} \
 	GZIPDOCS=no \
 	PREFIX=%{_prefix} \
