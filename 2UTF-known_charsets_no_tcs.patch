@@ -1,0 +1,49 @@
+--- 2UTF-1.22/2UTF.config~	Sun Jul  7 20:33:53 2002
++++ 2UTF-1.22/2UTF.config	Sun Jul  7 20:33:53 2002
+@@ -41,17 +41,17 @@
+ 
+ 
+ # `tcs' is in most popular software distributions.
+-[US-ASCII_is_subset] EUC-KR EUC-K
+-tcs -f euc-k
+-tcs -t euc-k
+-
+-[US-ASCII_is_subset] gb GB-2312-80 iso-ir-58
+-tcs -f gb
+-tcs -t gb
+-
+-[US-ASCII_is_subset] Big5
+-tcs -f big5
+-tcs -t big5
++#[US-ASCII_is_subset] EUC-KR EUC-K
++#tcs -f euc-k
++#tcs -t euc-k
++
++#[US-ASCII_is_subset] gb GB-2312-80 iso-ir-58
++#tcs -f gb
++#tcs -t gb
++
++#[US-ASCII_is_subset] Big5
++#tcs -f big5
++#tcs -t big5
+ 
+ [US-ASCII_is_subset] jis-kanji ISO_2022-JP
+ tcs -f jis-kanji
+@@ -61,12 +61,12 @@
+ tcs -f ujis
+ tcs -t ujis
+ 
+-[US-ASCII_is_subset] ms-kanji Shift-JiS
+-tcs -f ms-kanji
+-tcs -t ms-kanji
++#[US-ASCII_is_subset] ms-kanji Shift-JiS
++#tcs -f ms-kanji
++#tcs -t ms-kanji
+ 
+-[US-ASCII_is_subset] jis
+-tcs -f jis
++#[US-ASCII_is_subset] jis
++#tcs -f jis
+ 
+ 
+ [US-ASCII_is_subset] viscii VISCII_1.1
