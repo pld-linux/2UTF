@@ -10,7 +10,7 @@ Group(pl):	Narzêdzia/Tekst
 Source:		ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
 Patch:		2UTF-install.patch
 URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc
 
