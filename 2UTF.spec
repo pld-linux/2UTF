@@ -8,7 +8,7 @@ Group:		Utilities/Text
 Group(fr):	Utilitaires/Texte
 Group(pl):	Narzêdzia/Tekst
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
-Patch0:		2UTF-install.patch
+Patch0:		%{name}-install.patch
 URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
