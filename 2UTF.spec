@@ -1,15 +1,15 @@
 Summary:	Translates char-sets and decodes MIME.
 Summary(pl):	Translator tablic znaków oraz dekoder MIME.
 Name:		2UTF
-Version:	1.11
-Release:	4
+Version:	1.22
+Release:	1
 License:	BSD
 Group:		Applications/Text
 Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
 Group(pl):	Aplikacje/Tekst
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
-Patch0:		%{name}-install.patch
+Patch0:		%{name}-makefile.patch
 URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,8 +36,11 @@ chmod -R u+w .
 %patch -p0
 
 %build
-%{__make} config
-%{__make} GZIPDOCS=no \
+export CCFLAGS="%{rpmcflags} -L/usr/lib/gconv"
+%{__make} config ICONV_DIR=%{_prefix}
+export LDFLAGS="%{rpmcflags} -L/usr/lib/gconv"
+%{__make} \
+	GZIPDOCS=no \
 	PREFIX=%{_prefix} \
 	sysconfdir=%{_sysconfdir} \
 	docsdir=%{_docdir}/%{name}-%{version} \
@@ -79,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {BSD_style_license,TODO,changelog,copyright}.gz examples
+%doc *.gz examples/*.gz
 %config %{_sysconfdir}/2UTF.config
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
