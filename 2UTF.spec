@@ -1,12 +1,13 @@
 Summary:	Translates char-sets and decodes MIME.
 Summary(pl):	Translator tablic znaków oraz dekoder MIME.
 Name:		2UTF
-Version:	1.11
+Version:	1.22
 Release:	3
 License:	BSD
-Group:		Utilities/Text
+Group:		Applications/Text
+Group(de):	Applikationen/Text
 Group(fr):	Utilitaires/Texte
-Group(pl):	Narzêdzia/Tekst
+Group(pl):	Aplikacje/Tekst
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
 Patch0:		%{name}-install.patch
 URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
