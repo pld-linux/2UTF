@@ -2,7 +2,7 @@ Summary:	Translates char-sets and decodes MIME
 Summary(pl):	Translator tablic znaków oraz dekoder MIME
 Name:		2UTF
 Version:	1.22
-Release:	9
+Release:	10
 License:	BSD
 Group:		Applications/Text
 #Source0-md5:	883da4c858570d9d434d23e702304a5a
@@ -24,8 +24,8 @@ display char-maps and current console font.
 
 %description -l pl
 Translator tablic znaków do i z Unikodu. Pobiera definicje tablic
-znaków z lokalnych WG15 tablic znaków lub podobnych. Mo¿e zdekodowaæ
-wiadomo¶ci wieloczê¶ciowe MIME i uruchamiaæ zewnêtrzne filtry. Mo¿e
+znaków z lokalnych tablic znaków typu WG15 lub podobnych. Mo¿e zdekodowaæ
+wiadomo¶ci wieloczê¶ciowe MIME i uruchamiaæ zewnêtrzne filtry. Pozwala tez
 wy¶wietlaæ tablice znaków i aktualny font konsolowy.
 
 %prep
