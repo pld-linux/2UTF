@@ -2,7 +2,7 @@ Summary:	Translates char-sets and decodes MIME
 Summary(pl):	Translator tablic znaków oraz dekoder MIME
 Name:		2UTF
 Version:	1.22
-Release:	2
+Release:	3
 License:	BSD
 Group:		Applications/Text
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
@@ -46,6 +46,7 @@ LDFLAGS="%{rpmcflags} -L/usr/lib/gconv"; export LDFLAGS
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_datadir}/i18n/charmaps
 %{__make} GZIPDOCS=no \
 	PREFIX=$RPM_BUILD_ROOT%{_prefix} \
 	sysconfdir=$RPM_BUILD_ROOT%{_sysconfdir} \
@@ -81,3 +82,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/terminfo/l/*
+%{_datadir}/i18n/charmaps
+%attr(644,root,root) %ghost /var/lib/2UTF.aliases
