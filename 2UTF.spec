@@ -25,6 +25,7 @@ Mo¿e wy¶wietlaæ tablice znaków i aktualny font konsolowy.
 
 %prep
 %setup -q
+chmod -R u+w .
 %patch -p0
 
 %build
