@@ -13,7 +13,6 @@ URL:		http://x-lt.richard.eu.org/me/rch/ll.html
 #URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_sysconfdir	/etc
 %define		aliasdir	/var/lib/misc
 
 %description
@@ -51,7 +50,9 @@ LDFLAGS="%{rpmcflags} -L/usr/lib/gconv"; export LDFLAGS
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/i18n/charmaps
-%{__make} GZIPDOCS=no \
+
+%{__make} install \
+	GZIPDOCS=no \
 	PREFIX=$RPM_BUILD_ROOT%{_prefix} \
 	sysconfdir=$RPM_BUILD_ROOT%{_sysconfdir} \
 	var_prefix=$RPM_BUILD_ROOT/var \
@@ -62,8 +63,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/i18n/charmaps
 	man1dir=$RPM_BUILD_ROOT%{_mandir}/man1 \
 	tmpdir_install=yes \
 	owner=`id -ur` \
-	group=`id -gr` \
-	install
+	group=`id -gr`
 
 rm -f $RPM_BUILD_ROOT%{_mandir}/man1/{fromUTF.1,toUTF.1}
 echo ".so 2UTF.1" > $RPM_BUILD_ROOT%{_mandir}/man1/toUTF.1
@@ -71,14 +71,14 @@ echo ".so 2UTF.1" > $RPM_BUILD_ROOT%{_mandir}/man1/fromUTF.1
 
 ln -sf 2UTF $RPM_BUILD_ROOT%{_bindir}/toUTF
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 if [ -f /var/lib/2UTF.aliases ]; then
 	mv -f /var/lib/2UTF.aliases %{aliasdir}/2UTF.aliases
 fi
 %{_bindir}/2UTF --create-aliases
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
