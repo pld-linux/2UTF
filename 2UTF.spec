@@ -2,26 +2,29 @@ Summary:	Translates char-sets and decodes MIME.
 Summary(pl):	Translator tablic znaków oraz dekoder MIME.
 Name:		2UTF
 Version:	1.11
-Release:	1
-Copyright:	BSD
+Release:	2
+License:	BSD
 Group:		Utilities/Text
+Group(fr):	Utilitaires/Texte
 Group(pl):	Narzêdzia/Tekst
 Source:		ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
 Patch:		2UTF-install.patch
 URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
 BuildRoot:	/tmp/%{name}-%{version}-root
 
+%define		_sysconfdir	/etc
+
 %description
-Filter for char-set translation to and from Unicode.
-Gets char-set definitions from WG15 locales char-maps or similiar tables.
-Can decode nested multi-part MIME messages and invoke external filters.
-Can display char-maps and current console font.  
+Filter for char-set translation to and from Unicode. Gets char-set
+definitions from WG15 locales char-maps or similiar tables. Can decode
+nested multi-part MIME messages and invoke external filters. Can display
+char-maps and current console font.
 
 %description -l pl
-Translator tablic znaków do i z Unikodu.
-Pobiera definicje tablic znaków z lokalnych WG15 tablic znaków lub podobnych.
-Mo¿e zdekodowaæ wiadomo¶ci wieloczê¶ciowe MIME i uruchamiaæ zewnêtrzne filtry.
-Mo¿e wy¶wietlaæ tablice znaków i aktualny font konsolowy.
+Translator tablic znaków do i z Unikodu. Pobiera definicje tablic znaków z
+lokalnych WG15 tablic znaków lub podobnych. Mo¿e zdekodowaæ wiadomo¶ci
+wieloczê¶ciowe MIME i uruchamiaæ zewnêtrzne filtry. Mo¿e wy¶wietlaæ tablice
+znaków i aktualny font konsolowy.
 
 %prep
 %setup -q
@@ -32,7 +35,7 @@ chmod -R u+w .
 make config
 make GZIPDOCS=no \
 	PREFIX=%{_prefix} \
-	sysconfdir=/etc \
+	sysconfdir=%{_sysconfdir} \
 	docsdir=%{_docdir}/%{name}-%{version} \
 	var_prefix=/var \
 	ALIASES=/var/state/2UTF.aliases \
@@ -44,7 +47,7 @@ make GZIPDOCS=no \
 rm -rf $RPM_BUILD_ROOT
 make GZIPDOCS=no \
 	PREFIX=$RPM_BUILD_ROOT/%{_prefix} \
-	sysconfdir=$RPM_BUILD_ROOT/etc \
+	sysconfdir=$RPM_BUILD_ROOT%{_sysconfdir} \
 	var_prefix=$RPM_BUILD_ROOT/var \
 	ALIASES=$RPM_BUILD_ROOT/var/state/2UTF.aliases \
 	docsdir=$RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version} \
@@ -74,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {BSD_style_license,TODO,changelog,copyright}.gz examples
-%config /etc/2UTF.config
+%config %{_sysconfdir}/2UTF.config
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/terminfo/l/*
