@@ -1,0 +1,17 @@
+--- Makefile~	Sun Feb 14 18:19:32 1999
++++ Makefile	Wed Jul  7 14:48:10 1999
+@@ -248,13 +248,7 @@
+ 		if [ $${prefix##debian*}y != y ] ; \
+ 		then \
+ 		 if ! tic -V 2>&1 |grep -q tconv; then \
+-		    TERMINFO=; tic linux+utf8.ti; \
+-		    test -e $(prefix)/share/terminfo/l/ || $(MKDIR) \
+-			    $(prefix)/share/terminfo/l/; \
+-		    cp /usr/share/terminfo/l/linux+utf8 \
+-			    /usr/share/terminfo/l/linux-gr+utf8 \
+-			    /usr/share/terminfo/l/linux+k \
+-				    $(prefix)/share/terminfo/l/; \
++		    tic linux+utf8.ti; \
+ 		 fi; \
+ 		fi; \
+ 	else \
