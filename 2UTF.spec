@@ -2,7 +2,7 @@ Summary:	Translates char-sets and decodes MIME.
 Summary(pl):	Translator tablic znaków oraz dekoder MIME.
 Name:		2UTF
 Version:	1.11
-Release:	2
+Release:	3
 License:	BSD
 Group:		Utilities/Text
 Group(fr):	Utilitaires/Texte
@@ -38,7 +38,7 @@ make GZIPDOCS=no \
 	sysconfdir=%{_sysconfdir} \
 	docsdir=%{_docdir}/%{name}-%{version} \
 	var_prefix=/var \
-	ALIASES=/var/state/2UTF.aliases \
+	ALIASES=/var/lib/2UTF.aliases \
 	charmaps_localdatadir=%{_datadir}/i18n/charmaps \
 	man1dir=%{_mandir}/man1 \
 	OPT="$RPM_OPT_FLAGS"
@@ -49,7 +49,7 @@ make GZIPDOCS=no \
 	PREFIX=$RPM_BUILD_ROOT/%{_prefix} \
 	sysconfdir=$RPM_BUILD_ROOT%{_sysconfdir} \
 	var_prefix=$RPM_BUILD_ROOT/var \
-	ALIASES=$RPM_BUILD_ROOT/var/state/2UTF.aliases \
+	ALIASES=$RPM_BUILD_ROOT/var/lib/2UTF.aliases \
 	docsdir=$RPM_BUILD_ROOT/%{_docdir}/%{name}-%{version} \
 	charmaps_localdatadir=$RPM_BUILD_ROOT/%{_datadir}/i18n/charmaps \
 	TERMINFO=$RPM_BUILD_ROOT/%{_datadir}/terminfo \
