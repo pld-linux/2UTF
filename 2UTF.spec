@@ -24,9 +24,10 @@ display char-maps and current console font.
 
 %description -l pl
 Translator tablic znaków do i z Unikodu. Pobiera definicje tablic
-znaków z lokalnych tablic znaków typu WG15 lub podobnych. Mo¿e zdekodowaæ
-wiadomo¶ci wieloczê¶ciowe MIME i uruchamiaæ zewnêtrzne filtry. Pozwala tez
-wy¶wietlaæ tablice znaków i aktualny font konsolowy.
+znaków z lokalnych tablic znaków typu WG15 lub podobnych. Mo¿e
+zdekodowaæ wiadomo¶ci wieloczê¶ciowe MIME i uruchamiaæ zewnêtrzne
+filtry. Pozwala te¿ wy¶wietlaæ tablice znaków i aktualny font
+konsolowy.
 
 %prep
 %setup -q
