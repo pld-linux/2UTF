@@ -1,5 +1,6 @@
---- 2UTF-1.22/2UTF.config~	Sun Jul  7 20:33:53 2002
-+++ 2UTF-1.22/2UTF.config	Sun Jul  7 20:33:53 2002
+diff -u 2UTF-1.22.orig/2UTF.config 2UTF-1.22/2UTF.config
+--- 2UTF-1.22.orig/2UTF.config	Thu Sep 28 15:07:02 2000
++++ 2UTF-1.22/2UTF.config	Wed Nov  6 16:31:27 2002
 @@ -41,17 +41,17 @@
  
  
@@ -29,7 +30,7 @@
  
  [US-ASCII_is_subset] jis-kanji ISO_2022-JP
  tcs -f jis-kanji
-@@ -61,12 +61,12 @@
+@@ -61,17 +61,17 @@
  tcs -f ujis
  tcs -t ujis
  
@@ -46,4 +47,12 @@
 +#tcs -f jis
  
  
- [US-ASCII_is_subset] viscii VISCII_1.1
+-[US-ASCII_is_subset] viscii VISCII_1.1
+-tcs -f viet1
+-tcs -t viet1
++#[US-ASCII_is_subset] viscii VISCII_1.1
++#tcs -f viet1
++#tcs -t viet1
+ 
+ [US-ASCII_is_subset] viet1 VSCII-1
+ tcs -f viet1
