@@ -2,7 +2,7 @@ Summary:	Translates char-sets and decodes MIME
 Summary(pl):	Translator tablic znaków oraz dekoder MIME
 Name:		2UTF
 Version:	1.22
-Release:	7
+Release:	8
 License:	BSD
 Group:		Applications/Text
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
@@ -10,6 +10,7 @@ Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-known_charsets_no_tcs.patch
 URL:		http://x-lt.richard.eu.org/me/rch/ll.html
 #URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
+Requires:	localedb-src
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc
