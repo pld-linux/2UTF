@@ -4,9 +4,10 @@ Version:	1.10
 Release:	1
 Copyright:	BSD
 Group:		Utilities/Text
-URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
+Group(pl):	Narzêdzia/Tekst
 Source:		ftp://sunsite.unc.edu:/pub/Linux/utils/text/2UTF-1.10.tar.gz
 Patch:		2UTF-install.patch
+URL:		http://www.angelfire.com/me/rch/ll.html#2UTF
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -51,6 +52,8 @@ rm -f $RPM_BUILD_ROOT/%{_mandir}/man1/{fromUTF.1,toUTF.1}
 echo ".so 2UTF.1" > $RPM_BUILD_ROOT/%{_mandir}/man1/toUTF.1
 echo ".so 2UTF.1" > $RPM_BUILD_ROOT/%{_mandir}/man1/fromUTF.1
 
+ln -sf 2UTF $RPM_BUILD_ROOT%{_bindir}/toUTF
+
 gzip -9nf $RPM_BUILD_ROOT/%{_mandir}/man1/* examples/* \
 	BSD_style_license TODO changelog copyright || :
 
@@ -65,7 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc {BSD_style_license,TODO,changelog,copyright}.gz examples
 %config /etc/2UTF.config
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man1/*
 %{_datadir}/terminfo/l/*
 
