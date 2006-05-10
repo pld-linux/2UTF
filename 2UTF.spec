@@ -84,7 +84,7 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc examples/* BSD_style_license TODO changelog copyright
-%config %{_sysconfdir}/2UTF.config
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/2UTF.config
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/terminfo/l/*
