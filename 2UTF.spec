@@ -5,8 +5,8 @@ Version:	1.22
 Release:	10
 License:	BSD
 Group:		Applications/Text
-#Source0-md5:	883da4c858570d9d434d23e702304a5a
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/text/%{name}-%{version}.tar.gz
+#Source0-md5:	883da4c858570d9d434d23e702304a5a
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-known_charsets_no_tcs.patch
 URL:		http://unicode.strangled.net/me/rch/ll.html
