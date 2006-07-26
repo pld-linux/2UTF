@@ -1,0 +1,1 @@
+- removed tar workaround (no longer necessary) and bashisms from %build
