@@ -88,4 +88,4 @@ fi
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %{_datadir}/terminfo/l/*
-%attr(644,root,root) %ghost %{aliasdir}/2UTF.aliases
+%ghost %{aliasdir}/2UTF.aliases
