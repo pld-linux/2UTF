@@ -1,5 +1,5 @@
 Summary:	Translates char-sets and decodes MIME
-Summary(pl):	Translator tablic znaków oraz dekoder MIME
+Summary(pl.UTF-8):   Translator tablic znakÃ³w oraz dekoder MIME
 Name:		2UTF
 Version:	1.22
 Release:	10
@@ -21,11 +21,11 @@ definitions from WG15 locales char-maps or similiar tables. Can decode
 nested multi-part MIME messages and invoke external filters. Can
 display char-maps and current console font.
 
-%description -l pl
-Translator tablic znaków do i z Unikodu. Pobiera definicje tablic
-znaków z lokalnych tablic znaków typu WG15 lub podobnych. Mo¿e
-zdekodowaæ wiadomo¶ci wieloczê¶ciowe MIME i uruchamiaæ zewnêtrzne
-filtry. Pozwala te¿ wy¶wietlaæ tablice znaków i aktualny font
+%description -l pl.UTF-8
+Translator tablic znakÃ³w do i z Unikodu. Pobiera definicje tablic
+znakÃ³w z lokalnych tablic znakÃ³w typu WG15 lub podobnych. MoÅ¼e
+zdekodowaÄ‡ wiadomoÅ›ci wieloczÄ™Å›ciowe MIME i uruchamiaÄ‡ zewnÄ™trzne
+filtry. Pozwala teÅ¼ wyÅ›wietlaÄ‡ tablice znakÃ³w i aktualny font
 konsolowy.
 
 %prep
