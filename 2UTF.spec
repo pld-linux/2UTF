@@ -1,5 +1,5 @@
 Summary:	Translates char-sets and decodes MIME
-Summary(pl.UTF-8):   Translator tablic znaków oraz dekoder MIME
+Summary(pl.UTF-8):	Translator tablic znaków oraz dekoder MIME
 Name:		2UTF
 Version:	1.22
 Release:	10
